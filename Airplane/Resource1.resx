@@ -130,10 +130,4 @@
   <data name="gunshot003" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Sounds\gunshot003.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Sounds\idle.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="running" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Sounds\running.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
 </root>

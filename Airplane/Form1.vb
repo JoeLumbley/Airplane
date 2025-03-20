@@ -3088,39 +3088,25 @@ Public Class Form1
 
     Private Sub CreateSoundFiles()
 
-        Dim FilePath As String = Path.Combine(Application.StartupPath, "idle.mp3")
+        Dim FilePath As String
 
-        CreateFileFromResource(FilePath, My.Resources.Resource1.idle)
+        'Dim FilePath As String = Path.Combine(Application.StartupPath, "idle.mp3")
+        'CreateFileFromResource(FilePath, My.Resources.Resource1.idle)
 
-        FilePath = Path.Combine(Application.StartupPath, "running.mp3")
-
-        CreateFileFromResource(FilePath, My.Resources.Resource1.running)
+        'FilePath = Path.Combine(Application.StartupPath, "running.mp3")
+        'CreateFileFromResource(FilePath, My.Resources.Resource1.running)
 
         FilePath = Path.Combine(Application.StartupPath, "emergencystop.mp3")
-
         CreateFileFromResource(FilePath, My.Resources.Resource1.emergencystop)
 
-
         FilePath = Path.Combine(Application.StartupPath, "gunshot.mp3")
-
         CreateFileFromResource(FilePath, My.Resources.Resource1.gunshot003)
 
-
-
         FilePath = Path.Combine(Application.StartupPath, "airplanemin.mp3")
-
         CreateFileFromResource(FilePath, My.Resources.Resource1.airplanemin)
 
-
-
-
-
         FilePath = Path.Combine(Application.StartupPath, "airplanemax.mp3")
-
         CreateFileFromResource(FilePath, My.Resources.Resource1.airplanemax)
-
-
-
 
     End Sub
 
