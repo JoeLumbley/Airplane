@@ -2987,31 +2987,31 @@ Public Class Form1
 
     Private Sub HandleAudioPlayback()
 
-        If Body.Velocity <> 0 Then
+        If Body.Velocity <> Body.MinVelocity Then
 
-            If Not Player.IsPlaying("running") Then
+            If Not Player.IsPlaying("airplanemax") Then
 
-                Player.LoopSound("running")
+                Player.LoopSound("airplanemax")
 
             End If
 
-            If Player.IsPlaying("idle") Then
+            If Player.IsPlaying("airplanemin") Then
 
-                Player.PauseSound("idle")
+                Player.PauseSound("airplanemin")
 
             End If
 
         Else
 
-            If Not Player.IsPlaying("idle") Then
+            If Not Player.IsPlaying("airplanemin") Then
 
-                Player.LoopSound("idle")
+                Player.LoopSound("airplanemin")
 
             End If
 
-            If Player.IsPlaying("running") Then
+            If Player.IsPlaying("airplanemax") Then
 
-                Player.PauseSound("running")
+                Player.PauseSound("airplanemax")
 
             End If
 
@@ -3052,7 +3052,7 @@ Public Class Form1
 
         Player.SetVolume("idle", 300)
 
-        Player.LoopSound("idle")
+        'Player.LoopSound("idle")
 
         FilePath = Path.Combine(Application.StartupPath, "running.mp3")
 
@@ -3084,6 +3084,16 @@ Public Class Form1
 
         Player.SetVolume("airplanemin", 1000)
 
+
+
+        FilePath = Path.Combine(Application.StartupPath, "airplanemax.mp3")
+
+        Player.AddSound("airplanemax", FilePath)
+
+        Player.SetVolume("airplanemax", 1000)
+
+
+        Player.LoopSound("airplanemin")
 
 
     End Sub
