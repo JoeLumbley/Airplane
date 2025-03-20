@@ -788,38 +788,41 @@ Public Structure Body
         ' Scale factor to make the length from nose to tail 128 pixels
         ScaleFactor = 1000 / 40.0 ' Previous length was approximately 40 pixels
 
-        'Define an array of points representing an airplane.
-        Body = {
-            New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor)), ' Nose
-            New Point(CInt(3.4 * ScaleFactor), CInt(0.125 * ScaleFactor)),  ' Nose
-            New Point(CInt(3.2 * ScaleFactor), CInt(0.125 * ScaleFactor)),  ' Nose
-            New Point(CInt(3.1 * ScaleFactor), CInt(0.5 * ScaleFactor)),  ' Fuselage front
-            New Point(CInt(2.5 * ScaleFactor), CInt(0.5 * ScaleFactor)),  ' Fuselage front
-            New Point(CInt(2.25 * ScaleFactor), CInt(3 * ScaleFactor)),  ' Right wing root
-            New Point(CInt(2 * ScaleFactor), CInt(3.5 * ScaleFactor)),  ' Right wing tip
-            New Point(CInt(1.25 * ScaleFactor), CInt(3.5 * ScaleFactor)),  ' Right wing tip
-            New Point(CInt(1 * ScaleFactor), CInt(3 * ScaleFactor)),  ' Right wing tip
-            New Point(CInt(0.5 * ScaleFactor), CInt(0.5 * ScaleFactor)),  ' Right wing trailing edge
-            New Point(CInt(-2 * ScaleFactor), CInt(0.25 * ScaleFactor)),  ' Right Fuselage rear
-            New Point(CInt(-2.5 * ScaleFactor), CInt(1 * ScaleFactor)),  ' Right tail fin
-            New Point(CInt(-3 * ScaleFactor), CInt(1 * ScaleFactor)),  ' Right tail fin
-            New Point(CInt(-3.25 * ScaleFactor), CInt(0.125 * ScaleFactor)),  ' Right tail fin
-            New Point(CInt(-3.5 * ScaleFactor), CInt(0 * ScaleFactor)),  ' Tail tip
-            New Point(CInt(-3.25 * ScaleFactor), CInt(-0.125 * ScaleFactor)),  ' Left tail fin
-            New Point(CInt(-3 * ScaleFactor), CInt(-1 * ScaleFactor)),  ' Left tail fin
-            New Point(CInt(-2.5 * ScaleFactor), CInt(-1 * ScaleFactor)),  ' Left tail fin
-            New Point(CInt(-2 * ScaleFactor), CInt(-0.25 * ScaleFactor)),  ' Left Fuselage rear
-            New Point(CInt(0.5 * ScaleFactor), CInt(-0.5 * ScaleFactor)),  ' Left wing trailing edge
-            New Point(CInt(1 * ScaleFactor), CInt(-3 * ScaleFactor)),  ' Left wing tip
-            New Point(CInt(1.25 * ScaleFactor), CInt(-3.5 * ScaleFactor)),  ' Left wing tip
-            New Point(CInt(2 * ScaleFactor), CInt(-3.5 * ScaleFactor)),  ' Left wing tip
-            New Point(CInt(2.25 * ScaleFactor), CInt(-3 * ScaleFactor)),  ' Left wing root
-            New Point(CInt(2.5 * ScaleFactor), CInt(-0.5 * ScaleFactor)),  ' Fuselage front
-            New Point(CInt(3.1 * ScaleFactor), CInt(-0.5 * ScaleFactor)),  ' Fuselage front
-            New Point(CInt(3.2 * ScaleFactor), CInt(-0.125 * ScaleFactor)),  ' Nose
-            New Point(CInt(3.4 * ScaleFactor), CInt(-0.125 * ScaleFactor)),  ' Nose
-            New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor)) ' Nose
-            }
+        ScaleBody()
+        ' Scale the body of the airplane based on the scale factor.
+
+        ''Define an array of points representing an airplane.
+        'Body = {
+        '    New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor)), ' Nose
+        '    New Point(CInt(3.4 * ScaleFactor), CInt(0.125 * ScaleFactor)),  ' Nose
+        '    New Point(CInt(3.2 * ScaleFactor), CInt(0.125 * ScaleFactor)),  ' Nose
+        '    New Point(CInt(3.1 * ScaleFactor), CInt(0.5 * ScaleFactor)),  ' Fuselage front
+        '    New Point(CInt(2.5 * ScaleFactor), CInt(0.5 * ScaleFactor)),  ' Fuselage front
+        '    New Point(CInt(2.25 * ScaleFactor), CInt(3 * ScaleFactor)),  ' Right wing root
+        '    New Point(CInt(2 * ScaleFactor), CInt(3.5 * ScaleFactor)),  ' Right wing tip
+        '    New Point(CInt(1.25 * ScaleFactor), CInt(3.5 * ScaleFactor)),  ' Right wing tip
+        '    New Point(CInt(1 * ScaleFactor), CInt(3 * ScaleFactor)),  ' Right wing tip
+        '    New Point(CInt(0.5 * ScaleFactor), CInt(0.5 * ScaleFactor)),  ' Right wing trailing edge
+        '    New Point(CInt(-2 * ScaleFactor), CInt(0.25 * ScaleFactor)),  ' Right Fuselage rear
+        '    New Point(CInt(-2.5 * ScaleFactor), CInt(1 * ScaleFactor)),  ' Right tail fin
+        '    New Point(CInt(-3 * ScaleFactor), CInt(1 * ScaleFactor)),  ' Right tail fin
+        '    New Point(CInt(-3.25 * ScaleFactor), CInt(0.125 * ScaleFactor)),  ' Right tail fin
+        '    New Point(CInt(-3.5 * ScaleFactor), CInt(0 * ScaleFactor)),  ' Tail tip
+        '    New Point(CInt(-3.25 * ScaleFactor), CInt(-0.125 * ScaleFactor)),  ' Left tail fin
+        '    New Point(CInt(-3 * ScaleFactor), CInt(-1 * ScaleFactor)),  ' Left tail fin
+        '    New Point(CInt(-2.5 * ScaleFactor), CInt(-1 * ScaleFactor)),  ' Left tail fin
+        '    New Point(CInt(-2 * ScaleFactor), CInt(-0.25 * ScaleFactor)),  ' Left Fuselage rear
+        '    New Point(CInt(0.5 * ScaleFactor), CInt(-0.5 * ScaleFactor)),  ' Left wing trailing edge
+        '    New Point(CInt(1 * ScaleFactor), CInt(-3 * ScaleFactor)),  ' Left wing tip
+        '    New Point(CInt(1.25 * ScaleFactor), CInt(-3.5 * ScaleFactor)),  ' Left wing tip
+        '    New Point(CInt(2 * ScaleFactor), CInt(-3.5 * ScaleFactor)),  ' Left wing tip
+        '    New Point(CInt(2.25 * ScaleFactor), CInt(-3 * ScaleFactor)),  ' Left wing root
+        '    New Point(CInt(2.5 * ScaleFactor), CInt(-0.5 * ScaleFactor)),  ' Fuselage front
+        '    New Point(CInt(3.1 * ScaleFactor), CInt(-0.5 * ScaleFactor)),  ' Fuselage front
+        '    New Point(CInt(3.2 * ScaleFactor), CInt(-0.125 * ScaleFactor)),  ' Nose
+        '    New Point(CInt(3.4 * ScaleFactor), CInt(-0.125 * ScaleFactor)),  ' Nose
+        '    New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor)) ' Nose
+        '    }
 
         RotatedBody = New PointF(Body.Length - 1) {}
 
@@ -978,38 +981,7 @@ Public Structure Body
 
     Public Sub Update(ByVal deltaTime As TimeSpan)
 
-        'Define an array of points representing an airplane.
-        Body = {
-            New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor)), ' Nose
-            New Point(CInt(3.4 * ScaleFactor), CInt(0.125 * ScaleFactor)),  ' Nose
-            New Point(CInt(3.2 * ScaleFactor), CInt(0.125 * ScaleFactor)),  ' Nose
-            New Point(CInt(3.1 * ScaleFactor), CInt(0.5 * ScaleFactor)),  ' Fuselage front
-            New Point(CInt(2.5 * ScaleFactor), CInt(0.5 * ScaleFactor)),  ' Fuselage front
-            New Point(CInt(2.25 * ScaleFactor), CInt(3 * ScaleFactor)),  ' Right wing root
-            New Point(CInt(2 * ScaleFactor), CInt(3.5 * ScaleFactor)),  ' Right wing tip
-            New Point(CInt(1.25 * ScaleFactor), CInt(3.5 * ScaleFactor)),  ' Right wing tip
-            New Point(CInt(1 * ScaleFactor), CInt(3 * ScaleFactor)),  ' Right wing tip
-            New Point(CInt(0.5 * ScaleFactor), CInt(0.5 * ScaleFactor)),  ' Right wing trailing edge
-            New Point(CInt(-2 * ScaleFactor), CInt(0.25 * ScaleFactor)),  ' Right Fuselage rear
-            New Point(CInt(-2.5 * ScaleFactor), CInt(1 * ScaleFactor)),  ' Right tail fin
-            New Point(CInt(-3 * ScaleFactor), CInt(1 * ScaleFactor)),  ' Right tail fin
-            New Point(CInt(-3.25 * ScaleFactor), CInt(0.125 * ScaleFactor)),  ' Right tail fin
-            New Point(CInt(-3.5 * ScaleFactor), CInt(0 * ScaleFactor)),  ' Tail tip
-            New Point(CInt(-3.25 * ScaleFactor), CInt(-0.125 * ScaleFactor)),  ' Left tail fin
-            New Point(CInt(-3 * ScaleFactor), CInt(-1 * ScaleFactor)),  ' Left tail fin
-            New Point(CInt(-2.5 * ScaleFactor), CInt(-1 * ScaleFactor)),  ' Left tail fin
-            New Point(CInt(-2 * ScaleFactor), CInt(-0.25 * ScaleFactor)),  ' Left Fuselage rear
-            New Point(CInt(0.5 * ScaleFactor), CInt(-0.5 * ScaleFactor)),  ' Left wing trailing edge
-            New Point(CInt(1 * ScaleFactor), CInt(-3 * ScaleFactor)),  ' Left wing tip
-            New Point(CInt(1.25 * ScaleFactor), CInt(-3.5 * ScaleFactor)),  ' Left wing tip
-            New Point(CInt(2 * ScaleFactor), CInt(-3.5 * ScaleFactor)),  ' Left wing tip
-            New Point(CInt(2.25 * ScaleFactor), CInt(-3 * ScaleFactor)),  ' Left wing root
-            New Point(CInt(2.5 * ScaleFactor), CInt(-0.5 * ScaleFactor)),  ' Fuselage front
-            New Point(CInt(3.1 * ScaleFactor), CInt(-0.5 * ScaleFactor)),  ' Fuselage front
-            New Point(CInt(3.2 * ScaleFactor), CInt(-0.125 * ScaleFactor)),  ' Nose
-            New Point(CInt(3.4 * ScaleFactor), CInt(-0.125 * ScaleFactor)),  ' Nose
-            New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor)) ' Nose
-            }
+        ScaleBody()
 
         AngleInRadians = DegreesToRadians(AngleInDegrees)
 
@@ -1022,6 +994,44 @@ Public Structure Body
         VelocityVector.Y = Sin(AngleInRadians) * Velocity
 
         UpdateMovement(deltaTime)
+
+    End Sub
+
+    Private Sub ScaleBody()
+        ' Scale the body of the airplane based on the scale factor.
+
+        'Define an array of points representing an airplane.
+        Body = {
+            New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor)),          ' Nose
+            New Point(CInt(3.4 * ScaleFactor), CInt(0.125 * ScaleFactor)),      ' Nose
+            New Point(CInt(3.2 * ScaleFactor), CInt(0.125 * ScaleFactor)),      ' Nose
+            New Point(CInt(3.1 * ScaleFactor), CInt(0.5 * ScaleFactor)),        ' Fuselage front
+            New Point(CInt(2.5 * ScaleFactor), CInt(0.5 * ScaleFactor)),        ' Fuselage front
+            New Point(CInt(2.25 * ScaleFactor), CInt(3 * ScaleFactor)),         ' Right wing root
+            New Point(CInt(2 * ScaleFactor), CInt(3.5 * ScaleFactor)),          ' Right wing tip
+            New Point(CInt(1.25 * ScaleFactor), CInt(3.5 * ScaleFactor)),       ' Right wing tip
+            New Point(CInt(1 * ScaleFactor), CInt(3 * ScaleFactor)),            ' Right wing tip
+            New Point(CInt(0.5 * ScaleFactor), CInt(0.5 * ScaleFactor)),        ' Right wing trailing edge
+            New Point(CInt(-2 * ScaleFactor), CInt(0.25 * ScaleFactor)),        ' Right Fuselage rear
+            New Point(CInt(-2.5 * ScaleFactor), CInt(1 * ScaleFactor)),         ' Right tail fin
+            New Point(CInt(-3 * ScaleFactor), CInt(1 * ScaleFactor)),           ' Right tail fin
+            New Point(CInt(-3.25 * ScaleFactor), CInt(0.125 * ScaleFactor)),    ' Right tail fin
+            New Point(CInt(-3.5 * ScaleFactor), CInt(0 * ScaleFactor)),         ' Tail tip
+            New Point(CInt(-3.25 * ScaleFactor), CInt(-0.125 * ScaleFactor)),   ' Left tail fin
+            New Point(CInt(-3 * ScaleFactor), CInt(-1 * ScaleFactor)),          ' Left tail fin
+            New Point(CInt(-2.5 * ScaleFactor), CInt(-1 * ScaleFactor)),        ' Left tail fin
+            New Point(CInt(-2 * ScaleFactor), CInt(-0.25 * ScaleFactor)),       ' Left Fuselage rear
+            New Point(CInt(0.5 * ScaleFactor), CInt(-0.5 * ScaleFactor)),       ' Left wing trailing edge
+            New Point(CInt(1 * ScaleFactor), CInt(-3 * ScaleFactor)),           ' Left wing tip
+            New Point(CInt(1.25 * ScaleFactor), CInt(-3.5 * ScaleFactor)),      ' Left wing tip
+            New Point(CInt(2 * ScaleFactor), CInt(-3.5 * ScaleFactor)),         ' Left wing tip
+            New Point(CInt(2.25 * ScaleFactor), CInt(-3 * ScaleFactor)),        ' Left wing root
+            New Point(CInt(2.5 * ScaleFactor), CInt(-0.5 * ScaleFactor)),       ' Fuselage front
+            New Point(CInt(3.1 * ScaleFactor), CInt(-0.5 * ScaleFactor)),       ' Fuselage front
+            New Point(CInt(3.2 * ScaleFactor), CInt(-0.125 * ScaleFactor)),     ' Nose
+            New Point(CInt(3.4 * ScaleFactor), CInt(-0.125 * ScaleFactor)),     ' Nose
+            New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor))           ' Nose
+            }
 
     End Sub
 
