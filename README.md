@@ -8,7 +8,6 @@ This project is a dynamic and interactive simulation that brings together graphi
 
 ## Key Features
 - **Realistic Physics**: Simulate flight dynamics and projectile trajectories.
-- **Dynamic Turret Control**: Rotate and fire a turret with intuitive controls.
 - **Audio Integration**: Experience immersive sound effects for actions like firing and engine sounds.
 - **Controller Support**: Play using Xbox controllers for an enhanced gaming experience.
 - **User-Friendly Interface**: Easy-to-navigate controls and on-screen hints for guidance.
