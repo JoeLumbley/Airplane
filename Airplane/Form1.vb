@@ -1002,7 +1002,7 @@ Public Structure Body
 
         'Define an array of points representing an airplane.
         Body = {
-            New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor)),          ' Nose
+            New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor)),          ' Nose Start
             New Point(CInt(3.4 * ScaleFactor), CInt(0.125 * ScaleFactor)),      ' Nose
             New Point(CInt(3.2 * ScaleFactor), CInt(0.125 * ScaleFactor)),      ' Nose
             New Point(CInt(3.1 * ScaleFactor), CInt(0.5 * ScaleFactor)),        ' Fuselage front
@@ -1030,7 +1030,7 @@ Public Structure Body
             New Point(CInt(3.1 * ScaleFactor), CInt(-0.5 * ScaleFactor)),       ' Fuselage front
             New Point(CInt(3.2 * ScaleFactor), CInt(-0.125 * ScaleFactor)),     ' Nose
             New Point(CInt(3.4 * ScaleFactor), CInt(-0.125 * ScaleFactor)),     ' Nose
-            New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor))           ' Nose
+            New Point(CInt(3.5 * ScaleFactor), CInt(0 * ScaleFactor))           ' Nose End
             }
 
     End Sub
