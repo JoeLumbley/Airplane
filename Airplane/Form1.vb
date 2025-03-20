@@ -3138,6 +3138,11 @@ Public Class Form1
 
 
 
+        FilePath = Path.Combine(Application.StartupPath, "airplanemin.mp3")
+
+        CreateFileFromResource(FilePath, My.Resources.Resource1.airplanemin)
+
+
 
     End Sub
 
