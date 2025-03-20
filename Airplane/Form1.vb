@@ -3052,8 +3052,6 @@ Public Class Form1
 
         Player.SetVolume("idle", 300)
 
-        'Player.LoopSound("idle")
-
         FilePath = Path.Combine(Application.StartupPath, "running.mp3")
 
         Player.AddSound("running", FilePath)
@@ -3066,17 +3064,11 @@ Public Class Form1
 
         Player.SetVolume("emergencystop", 1000)
 
-
-
-
         FilePath = Path.Combine(Application.StartupPath, "gunshot.mp3")
 
         Player.AddOverlapping("gunshot", FilePath)
 
         Player.SetVolumeOverlapping("gunshot", 1000)
-
-
-
 
         FilePath = Path.Combine(Application.StartupPath, "airplanemin.mp3")
 
@@ -3084,17 +3076,13 @@ Public Class Form1
 
         Player.SetVolume("airplanemin", 1000)
 
-
-
         FilePath = Path.Combine(Application.StartupPath, "airplanemax.mp3")
 
         Player.AddSound("airplanemax", FilePath)
 
         Player.SetVolume("airplanemax", 1000)
 
-
         Player.LoopSound("airplanemin")
-
 
     End Sub
 
