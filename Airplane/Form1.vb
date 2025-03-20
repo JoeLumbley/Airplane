@@ -3073,7 +3073,17 @@ Public Class Form1
 
         Player.AddOverlapping("gunshot", FilePath)
 
-        Player.SetVolume("gunshot", 1000)
+        Player.SetVolumeOverlapping("gunshot", 1000)
+
+
+
+
+        FilePath = Path.Combine(Application.StartupPath, "airplanemin.mp3")
+
+        Player.AddSound("airplanemin", FilePath)
+
+        Player.SetVolume("airplanemin", 1000)
+
 
 
     End Sub
@@ -3102,6 +3112,15 @@ Public Class Form1
         FilePath = Path.Combine(Application.StartupPath, "airplanemin.mp3")
 
         CreateFileFromResource(FilePath, My.Resources.Resource1.airplanemin)
+
+
+
+
+
+        FilePath = Path.Combine(Application.StartupPath, "airplanemax.mp3")
+
+        CreateFileFromResource(FilePath, My.Resources.Resource1.airplanemax)
+
 
 
 
