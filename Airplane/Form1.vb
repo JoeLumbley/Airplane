@@ -783,84 +783,55 @@ Public Structure Body
 
         HalfHeight = height / 2
 
-        'Body = {
-        '    New PointF(-HalfWidth, -HalfHeight),
-        '    New PointF(HalfWidth, -HalfHeight),
-        '    New PointF(HalfWidth, HalfHeight),
-        '    New PointF(-HalfWidth, HalfHeight)
-        '}
-
-
-
         ' Scale factor to make the length from nose to tail 128 pixels
         Dim scaleFactor As Double = 1000 / 40.0 ' Previous length was approximately 40 pixels
 
-
-        'Define an array of points representing the Mitsubishi Zero
-        '    Body = {
-        '        New Point(0, 0),                              ' Nose
-        'New Point(CInt(10 * scaleFactor), CInt(5 * scaleFactor)),  ' Fuselage front
-        'New Point(CInt(20 * scaleFactor), CInt(10 * scaleFactor)), ' Right wing root
-        'New Point(CInt(50 * scaleFactor), CInt(20 * scaleFactor)), ' Right wing tip
-        'New Point(CInt(20 * scaleFactor), CInt(0 * scaleFactor)),  ' Right wing trailing edge
-        'New Point(CInt(5 * scaleFactor), CInt(30 * scaleFactor)),  ' Fuselage rear
-        'New Point(CInt(-20 * scaleFactor), CInt(0 * scaleFactor)),  ' Left wing trailing edge
-        'New Point(CInt(-50 * scaleFactor), CInt(20 * scaleFactor)), ' Left wing tip
-        'New Point(CInt(-20 * scaleFactor), CInt(10 * scaleFactor)), ' Left wing root
-        'New Point(CInt(-10 * scaleFactor), CInt(5 * scaleFactor)),  ' Fuselage front left
-        'New Point(CInt(-15 * scaleFactor), CInt(-10 * scaleFactor)), ' Left tail fin
-        'New Point(CInt(0), CInt(-20 * scaleFactor)),               ' Tail tip
-        'New Point(CInt(15 * scaleFactor), CInt(-10 * scaleFactor)),  ' Right tail fin
-        'New Point(0, 0)
-        '    }
-
+        'Define an array of points representing an airplane.
         Body = {
             New Point(CInt(3.5 * scaleFactor), CInt(0 * scaleFactor)), ' Nose
-    New Point(CInt(3.4 * scaleFactor), CInt(0.125 * scaleFactor)),  ' Nose
-    New Point(CInt(3.2 * scaleFactor), CInt(0.125 * scaleFactor)),  ' Nose
-    New Point(CInt(3.1 * scaleFactor), CInt(0.5 * scaleFactor)),  ' Fuselage front
-    New Point(CInt(2.5 * scaleFactor), CInt(0.5 * scaleFactor)),  ' Fuselage front
-    New Point(CInt(2.25 * scaleFactor), CInt(3 * scaleFactor)),  ' Right wing root
-    New Point(CInt(2 * scaleFactor), CInt(3.5 * scaleFactor)),  ' Right wing tip
-    New Point(CInt(1.25 * scaleFactor), CInt(3.5 * scaleFactor)),  ' Right wing tip
-    New Point(CInt(1 * scaleFactor), CInt(3 * scaleFactor)),  ' Right wing tip
-    New Point(CInt(0.5 * scaleFactor), CInt(0.5 * scaleFactor)),  ' Right wing trailing edge
-    New Point(CInt(-2 * scaleFactor), CInt(0.25 * scaleFactor)),  ' Right Fuselage rear
-    New Point(CInt(-2.5 * scaleFactor), CInt(1 * scaleFactor)),  ' Right tail fin
-    New Point(CInt(-3 * scaleFactor), CInt(1 * scaleFactor)),  ' Right tail fin
-    New Point(CInt(-3.25 * scaleFactor), CInt(0.125 * scaleFactor)),  ' Right tail fin
-    New Point(CInt(-3.5 * scaleFactor), CInt(0 * scaleFactor)),  ' Tail tip
-    New Point(CInt(-3.25 * scaleFactor), CInt(-0.125 * scaleFactor)),  ' Left tail fin
-    New Point(CInt(-3 * scaleFactor), CInt(-1 * scaleFactor)),  ' Left tail fin
-    New Point(CInt(-2.5 * scaleFactor), CInt(-1 * scaleFactor)),  ' Left tail fin
-    New Point(CInt(-2 * scaleFactor), CInt(-0.25 * scaleFactor)),  ' Left Fuselage rear
-    New Point(CInt(0.5 * scaleFactor), CInt(-0.5 * scaleFactor)),  ' Left wing trailing edge
-    New Point(CInt(1 * scaleFactor), CInt(-3 * scaleFactor)),  ' Left wing tip
-    New Point(CInt(1.25 * scaleFactor), CInt(-3.5 * scaleFactor)),  ' Left wing tip
-    New Point(CInt(2 * scaleFactor), CInt(-3.5 * scaleFactor)),  ' Left wing tip
-    New Point(CInt(2.25 * scaleFactor), CInt(-3 * scaleFactor)),  ' Left wing root
-    New Point(CInt(2.5 * scaleFactor), CInt(-0.5 * scaleFactor)),  ' Fuselage front
-    New Point(CInt(3.1 * scaleFactor), CInt(-0.5 * scaleFactor)),  ' Fuselage front
-    New Point(CInt(3.2 * scaleFactor), CInt(-0.125 * scaleFactor)),  ' Nose
-    New Point(CInt(3.4 * scaleFactor), CInt(-0.125 * scaleFactor)),  ' Nose
-   New Point(CInt(3.5 * scaleFactor), CInt(0 * scaleFactor)) ' Nose
-        }
-
-
-        '' Define an array of points representing the Mitsubishi Zero wing with 100 points
-        'ReDim Body(99)
-
-        '' Generate points for the wing
-        'For i As Integer = 0 To 99
-        '    Dim t As Double = i / 99.0 ' Normalize i to range [0, 1]
-        '    Dim x As Double = t * 20 * scaleFactor ' Wing span
-        '    Dim y As Double = Math.Sin(t * Math.PI) * 10 * scaleFactor ' Wing curvature
-
-        '    ' Assign points to the array
-        '    Body(i) = New Point(CInt(x), CInt(y))
-        'Next
+            New Point(CInt(3.4 * scaleFactor), CInt(0.125 * scaleFactor)),  ' Nose
+            New Point(CInt(3.2 * scaleFactor), CInt(0.125 * scaleFactor)),  ' Nose
+            New Point(CInt(3.1 * scaleFactor), CInt(0.5 * scaleFactor)),  ' Fuselage front
+            New Point(CInt(2.5 * scaleFactor), CInt(0.5 * scaleFactor)),  ' Fuselage front
+            New Point(CInt(2.25 * scaleFactor), CInt(3 * scaleFactor)),  ' Right wing root
+            New Point(CInt(2 * scaleFactor), CInt(3.5 * scaleFactor)),  ' Right wing tip
+            New Point(CInt(1.25 * scaleFactor), CInt(3.5 * scaleFactor)),  ' Right wing tip
+            New Point(CInt(1 * scaleFactor), CInt(3 * scaleFactor)),  ' Right wing tip
+            New Point(CInt(0.5 * scaleFactor), CInt(0.5 * scaleFactor)),  ' Right wing trailing edge
+            New Point(CInt(-2 * scaleFactor), CInt(0.25 * scaleFactor)),  ' Right Fuselage rear
+            New Point(CInt(-2.5 * scaleFactor), CInt(1 * scaleFactor)),  ' Right tail fin
+            New Point(CInt(-3 * scaleFactor), CInt(1 * scaleFactor)),  ' Right tail fin
+            New Point(CInt(-3.25 * scaleFactor), CInt(0.125 * scaleFactor)),  ' Right tail fin
+            New Point(CInt(-3.5 * scaleFactor), CInt(0 * scaleFactor)),  ' Tail tip
+            New Point(CInt(-3.25 * scaleFactor), CInt(-0.125 * scaleFactor)),  ' Left tail fin
+            New Point(CInt(-3 * scaleFactor), CInt(-1 * scaleFactor)),  ' Left tail fin
+            New Point(CInt(-2.5 * scaleFactor), CInt(-1 * scaleFactor)),  ' Left tail fin
+            New Point(CInt(-2 * scaleFactor), CInt(-0.25 * scaleFactor)),  ' Left Fuselage rear
+            New Point(CInt(0.5 * scaleFactor), CInt(-0.5 * scaleFactor)),  ' Left wing trailing edge
+            New Point(CInt(1 * scaleFactor), CInt(-3 * scaleFactor)),  ' Left wing tip
+            New Point(CInt(1.25 * scaleFactor), CInt(-3.5 * scaleFactor)),  ' Left wing tip
+            New Point(CInt(2 * scaleFactor), CInt(-3.5 * scaleFactor)),  ' Left wing tip
+            New Point(CInt(2.25 * scaleFactor), CInt(-3 * scaleFactor)),  ' Left wing root
+            New Point(CInt(2.5 * scaleFactor), CInt(-0.5 * scaleFactor)),  ' Fuselage front
+            New Point(CInt(3.1 * scaleFactor), CInt(-0.5 * scaleFactor)),  ' Fuselage front
+            New Point(CInt(3.2 * scaleFactor), CInt(-0.125 * scaleFactor)),  ' Nose
+            New Point(CInt(3.4 * scaleFactor), CInt(-0.125 * scaleFactor)),  ' Nose
+            New Point(CInt(3.5 * scaleFactor), CInt(0 * scaleFactor)) ' Nose
+            }
 
         RotatedBody = New PointF(Body.Length - 1) {}
+
+        If angleInDegrees >= 0 AndAlso angleInDegrees <= 360 Then
+            Me.AngleInDegrees = angleInDegrees
+        Else
+            Me.AngleInDegrees = 0
+        End If
+
+        AngleInRadians = DegreesToRadians(angleInDegrees)
+
+        RotatedBody = RotatePoints(Body, center, AngleInRadians)
+
+
 
         KeyboardHintsFont = New Font("Segoe UI", 14, FontStyle.Bold)
 
@@ -872,16 +843,6 @@ Public Structure Body
         }
 
         RotatedHints = New PointF(KeyboardHints.Length - 1) {}
-
-        If angleInDegrees >= 0 AndAlso angleInDegrees <= 360 Then
-            Me.AngleInDegrees = angleInDegrees
-        Else
-            Me.AngleInDegrees = 0
-        End If
-
-        AngleInRadians = DegreesToRadians(angleInDegrees)
-
-        RotatedBody = RotatePoints(Body, center, AngleInRadians)
 
         RotatedHints = RotatePoints(KeyboardHints, center, AngleInRadians)
 
