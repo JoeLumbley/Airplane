@@ -2719,37 +2719,37 @@ Public Class Form1
 
         End If
 
-        If EDown Then
+        'If EDown Then
 
-            Body.EmergencyStop(DeltaTime.ElapsedTime)
+        '    Body.EmergencyStop(DeltaTime.ElapsedTime)
 
-            If Body.Velocity <> 0 Then
+        '    If Body.Velocity <> 0 Then
 
-                If Not Player.IsPlaying("emergencystop") Then
+        '        If Not Player.IsPlaying("emergencystop") Then
 
-                    Player.PlaySound("emergencystop")
+        '            Player.PlaySound("emergencystop")
 
-                End If
+        '        End If
 
-            Else
+        '    Else
 
-                If Player.IsPlaying("emergencystop") Then
+        '        If Player.IsPlaying("emergencystop") Then
 
-                    Player.PauseSound("emergencystop")
+        '            Player.PauseSound("emergencystop")
 
-                End If
+        '        End If
 
-            End If
+        '    End If
 
-        ElseIf Not Controllers.B(0) Then
+        'ElseIf Not Controllers.B(0) Then
 
-            If Player.IsPlaying("emergencystop") Then
+        '    If Player.IsPlaying("emergencystop") Then
 
-                Player.PauseSound("emergencystop")
+        '        Player.PauseSound("emergencystop")
 
-            End If
+        '    End If
 
-        End If
+        'End If
 
         If F1Down Then
 
@@ -2823,13 +2823,13 @@ Public Class Form1
 
         If LeftArrowDown Then
 
-            RotateTurretCounterClockwise()
+            'RotateTurretCounterClockwise()
 
         End If
 
         If RightArrowDown Then
 
-            RotateTurretClockwise()
+            'RotateTurretClockwise()
 
         End If
 
@@ -2929,41 +2929,41 @@ Public Class Form1
 
         End If
 
-        If Controllers.B(0) Then
+        'If Controllers.B(0) Then
 
-            Body.EmergencyStop(DeltaTime.ElapsedTime)
+        '    Body.EmergencyStop(DeltaTime.ElapsedTime)
 
-            If Body.Velocity <> 0 Then
+        '    If Body.Velocity <> 0 Then
 
-                If Not Player.IsPlaying("emergencystop") Then
+        '        If Not Player.IsPlaying("emergencystop") Then
 
-                    Player.PlaySound("emergencystop")
+        '            Player.PlaySound("emergencystop")
 
-                End If
+        '        End If
 
-                Controllers.TimeToVibe = 50
+        '        Controllers.TimeToVibe = 50
 
-                Controllers.VibrateRight(0, 32000)
+        '        Controllers.VibrateRight(0, 32000)
 
-            Else
+        '    Else
 
-                If Player.IsPlaying("emergencystop") Then
+        '        If Player.IsPlaying("emergencystop") Then
 
-                    Player.PauseSound("emergencystop")
+        '            Player.PauseSound("emergencystop")
 
-                End If
+        '        End If
 
-            End If
+        '    End If
 
-        ElseIf Not EDown Then
+        'ElseIf Not EDown Then
 
-            If Player.IsPlaying("emergencystop") Then
+        '    If Player.IsPlaying("emergencystop") Then
 
-                Player.PauseSound("emergencystop")
+        '        Player.PauseSound("emergencystop")
 
-            End If
+        '    End If
 
-        End If
+        'End If
 
         If Controllers.X(0) OrElse Controllers.RightTrigger(0) Then
 
@@ -3068,7 +3068,7 @@ Public Class Form1
 
         Player.AddOverlapping("gunshot", FilePath)
 
-        Player.SetVolumeOverlapping("gunshot", 1000)
+        Player.SetVolumeOverlapping("gunshot", 500)
 
         FilePath = Path.Combine(Application.StartupPath, "airplanemin.mp3")
 
@@ -3089,12 +3089,6 @@ Public Class Form1
     Private Sub CreateSoundFiles()
 
         Dim FilePath As String
-
-        'Dim FilePath As String = Path.Combine(Application.StartupPath, "idle.mp3")
-        'CreateFileFromResource(FilePath, My.Resources.Resource1.idle)
-
-        'FilePath = Path.Combine(Application.StartupPath, "running.mp3")
-        'CreateFileFromResource(FilePath, My.Resources.Resource1.running)
 
         FilePath = Path.Combine(Application.StartupPath, "emergencystop.mp3")
         CreateFileFromResource(FilePath, My.Resources.Resource1.emergencystop)
