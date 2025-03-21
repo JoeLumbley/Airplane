@@ -847,12 +847,8 @@ Public Structure Body
         '    New PointF(-HalfWidth - 20, -HalfHeight + Me.Height / 2)
         '}
 
-        KeyboardHints = {
-            New PointF(CInt(1.75 * ScaleFactor), CInt(-4.5 * ScaleFactor)), 'A
-            New PointF(CInt(1.75 * ScaleFactor), CInt(4.5 * ScaleFactor)), 'D
-            New PointF(CInt(4.5 * ScaleFactor), CInt(0 * ScaleFactor)),'W
-            New PointF(CInt(-4.5 * ScaleFactor), CInt(0 * ScaleFactor))'S
-        }
+
+        ScaleHints()
 
         RotatedHints = New PointF(KeyboardHints.Length - 1) {}
 
@@ -863,6 +859,18 @@ Public Structure Body
         VelocityVector.Y = Sin(AngleInRadians) * Me.Velocity
 
         ShowKeyboardHints = True
+
+    End Sub
+
+    Private Sub ScaleHints()
+        ' Scale the hints based on the scale factor.
+
+        KeyboardHints = {
+            New PointF(CInt(1.75 * ScaleFactor), CInt(-4.5 * ScaleFactor)), 'A
+            New PointF(CInt(1.75 * ScaleFactor), CInt(4.5 * ScaleFactor)),  'D
+            New PointF(CInt(4.5 * ScaleFactor), CInt(0 * ScaleFactor)),     'W
+            New PointF(CInt(-4.5 * ScaleFactor), CInt(0 * ScaleFactor))     'S
+        }
 
     End Sub
 
@@ -990,12 +998,15 @@ Public Structure Body
 
         ScaleBody()
 
-        KeyboardHints = {
-            New PointF(CInt(1.75 * ScaleFactor), CInt(-4.5 * ScaleFactor)), 'A
-            New PointF(CInt(1.75 * ScaleFactor), CInt(4.5 * ScaleFactor)), 'D
-            New PointF(CInt(4.5 * ScaleFactor), CInt(0 * ScaleFactor)),'W
-            New PointF(CInt(-4.5 * ScaleFactor), CInt(0 * ScaleFactor))'S
-        }
+        ScaleHints()
+
+
+        'KeyboardHints = {
+        '    New PointF(CInt(1.75 * ScaleFactor), CInt(-4.5 * ScaleFactor)), 'A
+        '    New PointF(CInt(1.75 * ScaleFactor), CInt(4.5 * ScaleFactor)), 'D
+        '    New PointF(CInt(4.5 * ScaleFactor), CInt(0 * ScaleFactor)),'W
+        '    New PointF(CInt(-4.5 * ScaleFactor), CInt(0 * ScaleFactor))'S
+        '}
 
 
         AngleInRadians = DegreesToRadians(AngleInDegrees)
