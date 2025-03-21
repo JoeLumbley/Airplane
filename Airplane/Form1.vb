@@ -850,6 +850,7 @@ Public Structure Body
 
         ScaleHints()
 
+        ' Set rotated hints the to size of the hints.
         RotatedHints = New PointF(KeyboardHints.Length - 1) {}
 
         RotatedHints = RotatePoints(KeyboardHints, center, AngleInRadians)
@@ -871,6 +872,78 @@ Public Structure Body
             New PointF(CInt(4.5 * ScaleFactor), CInt(0 * ScaleFactor)),     'W
             New PointF(CInt(-4.5 * ScaleFactor), CInt(0 * ScaleFactor))     'S
         }
+
+    End Sub
+
+    Private Sub DrawRoundedRectangle(pen As Pen, Rect As Rectangle, radius As Integer, g As Graphics)
+
+        'g.CompositingMode = CompositingMode.SourceOver
+
+        'g.SmoothingMode = SmoothingMode.AntiAlias
+
+        Dim path As New GraphicsPath()
+
+        'Add top line inside the top left and top right corners.
+        path.AddLine(Rect.Left + radius, Rect.Top, Rect.Right - radius, Rect.Top)
+
+        'Add top right corner.
+        path.AddArc(Rect.Right - radius, Rect.Top, radius, radius, 270, 90)
+
+        'Add right line inside the top right and bottom right corners.
+        path.AddLine(Rect.Right, Rect.Top + radius, Rect.Right, Rect.Bottom - radius)
+
+        'Add bottom right corner.
+        path.AddArc(Rect.Right - radius, Rect.Bottom - radius, radius, radius, 0, 90)
+
+        'Add bottom line inside the bottom left and the bottom right corners.
+        path.AddLine(Rect.Right - radius, Rect.Bottom, Rect.Left + radius, Rect.Bottom)
+
+        'Add bottom left corner.
+        path.AddArc(Rect.Left, Rect.Bottom - radius, radius, radius, 90, 90)
+
+        'Add left line inside the top left and bottom left corners.
+        path.AddLine(Rect.Left, Rect.Bottom - radius, Rect.Left, Rect.Top + radius)
+
+        'Add top left corner.
+        path.AddArc(Rect.Left, Rect.Top, radius, radius, 180, 90)
+
+        path.CloseFigure()
+
+        g.DrawPath(pen, path)
+
+    End Sub
+
+    Private Sub FillRoundedRectangle(brush As Brush, Rect As Rectangle, radius As Integer, g As Graphics)
+
+        Dim Path As New GraphicsPath()
+
+        'Add top line inside the top left and top right corners.
+        Path.AddLine(Rect.Left + radius, Rect.Top, Rect.Right - radius, Rect.Top)
+
+        'Add top right corner.
+        Path.AddArc(Rect.Right - radius, Rect.Top, radius, radius, 270, 90)
+
+        'Add right line inside the top right and bottom right corners.
+        Path.AddLine(Rect.Right, Rect.Top + radius, Rect.Right, Rect.Bottom - radius)
+
+        'Add bottom right corner.
+        Path.AddArc(Rect.Right - radius, Rect.Bottom - radius, radius, radius, 0, 90)
+
+        'Add bottom line inside the bottom left and the bottom right corners.
+        Path.AddLine(Rect.Right - radius, Rect.Bottom, Rect.Left + radius, Rect.Bottom)
+
+        'Add bottom left corner.
+        Path.AddArc(Rect.Left, Rect.Bottom - radius, radius, radius, 90, 90)
+
+        'Add left line inside the top left and bottom left corners.
+        Path.AddLine(Rect.Left, Rect.Bottom - radius, Rect.Left, Rect.Top + radius)
+
+        'Add top left corner.
+        Path.AddArc(Rect.Left, Rect.Top, radius, radius, 180, 90)
+
+        Path.CloseFigure()
+
+        g.FillPath(brush, Path)
 
     End Sub
 
@@ -1094,17 +1167,31 @@ Public Structure Body
 
         If ShowKeyboardHints Then
 
-            g?.FillEllipse(Brushes.Black, RotatedHints(0).X - 17, RotatedHints(0).Y - 17, 34, 34)
+            'g?.FillEllipse(Brushes.Black, RotatedHints(0).X - 17, RotatedHints(0).Y - 17, 34, 34)
+            'g?.DrawString("A", KeyboardHintsFont, Brushes.White, RotatedHints(0), AlineCenterMiddle)
+
+            'g?.FillEllipse(Brushes.Black, RotatedHints(1).X - 17, RotatedHints(1).Y - 17, 34, 34)
+            'g?.DrawString("D", KeyboardHintsFont, Brushes.White, RotatedHints(1), AlineCenterMiddle)
+
+            'g?.FillEllipse(Brushes.Black, RotatedHints(2).X - 17, RotatedHints(2).Y - 17, 34, 34)
+            'g?.DrawString("W", KeyboardHintsFont, Brushes.White, RotatedHints(2), AlineCenterMiddle)
+
+            'g?.FillEllipse(Brushes.Black, RotatedHints(3).X - 17, RotatedHints(3).Y - 17, 34, 34)
+            'g?.DrawString("S", KeyboardHintsFont, Brushes.White, RotatedHints(3), AlineCenterMiddle)
+
+            FillRoundedRectangle(Brushes.Black, New Rectangle(RotatedHints(0).X - 17, RotatedHints(0).Y - 17, 34, 34), 12, g)
             g?.DrawString("A", KeyboardHintsFont, Brushes.White, RotatedHints(0), AlineCenterMiddle)
 
-            g?.FillEllipse(Brushes.Black, RotatedHints(1).X - 17, RotatedHints(1).Y - 17, 34, 34)
+            FillRoundedRectangle(Brushes.Black, New Rectangle(RotatedHints(1).X - 17, RotatedHints(1).Y - 17, 34, 34), 12, g)
             g?.DrawString("D", KeyboardHintsFont, Brushes.White, RotatedHints(1), AlineCenterMiddle)
 
-            g?.FillEllipse(Brushes.Black, RotatedHints(2).X - 17, RotatedHints(2).Y - 17, 34, 34)
+            FillRoundedRectangle(Brushes.Black, New Rectangle(RotatedHints(2).X - 17, RotatedHints(2).Y - 17, 34, 34), 12, g)
             g?.DrawString("W", KeyboardHintsFont, Brushes.White, RotatedHints(2), AlineCenterMiddle)
 
-            g?.FillEllipse(Brushes.Black, RotatedHints(3).X - 17, RotatedHints(3).Y - 17, 34, 34)
+            FillRoundedRectangle(Brushes.Black, New Rectangle(RotatedHints(3).X - 17, RotatedHints(3).Y - 17, 34, 34), 12, g)
             g?.DrawString("S", KeyboardHintsFont, Brushes.White, RotatedHints(3), AlineCenterMiddle)
+
+
 
         End If
 
