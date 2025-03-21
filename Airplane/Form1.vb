@@ -840,11 +840,18 @@ Public Structure Body
 
         KeyboardHintsFont = New Font("Segoe UI", 14, FontStyle.Bold)
 
+        'KeyboardHints = {
+        '    New PointF(HalfWidth - 10, -HalfHeight - 20),
+        '    New PointF(HalfWidth - 10, HalfHeight + 20),
+        '    New PointF(HalfWidth + 20, -HalfHeight + Me.Height / 2),
+        '    New PointF(-HalfWidth - 20, -HalfHeight + Me.Height / 2)
+        '}
+
         KeyboardHints = {
-            New PointF(HalfWidth - 10, -HalfHeight - 20),
-            New PointF(HalfWidth - 10, HalfHeight + 20),
-            New PointF(HalfWidth + 20, -HalfHeight + Me.Height / 2),
-            New PointF(-HalfWidth - 20, -HalfHeight + Me.Height / 2)
+            New PointF(CInt(1.75 * ScaleFactor), CInt(-4.5 * ScaleFactor)), 'A
+            New PointF(CInt(1.75 * ScaleFactor), CInt(4.5 * ScaleFactor)), 'D
+            New PointF(CInt(4.5 * ScaleFactor), CInt(0 * ScaleFactor)),'W
+            New PointF(CInt(-4.5 * ScaleFactor), CInt(0 * ScaleFactor))'S
         }
 
         RotatedHints = New PointF(KeyboardHints.Length - 1) {}
@@ -982,6 +989,14 @@ Public Structure Body
     Public Sub Update(ByVal deltaTime As TimeSpan)
 
         ScaleBody()
+
+        KeyboardHints = {
+            New PointF(CInt(1.75 * ScaleFactor), CInt(-4.5 * ScaleFactor)), 'A
+            New PointF(CInt(1.75 * ScaleFactor), CInt(4.5 * ScaleFactor)), 'D
+            New PointF(CInt(4.5 * ScaleFactor), CInt(0 * ScaleFactor)),'W
+            New PointF(CInt(-4.5 * ScaleFactor), CInt(0 * ScaleFactor))'S
+        }
+
 
         AngleInRadians = DegreesToRadians(AngleInDegrees)
 
