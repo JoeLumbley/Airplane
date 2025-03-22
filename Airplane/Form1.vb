@@ -2605,12 +2605,12 @@ Public Class Form1
 
     Private F1NoticeLocation As New PointF(0, 0)
 
-    Private HiddenHints As New String("Show / Hide Keyboard Hints > F1" _
+    Private HiddenHints As New String("Show Keyboard Hints > F1" _
                                   & Environment.NewLine)
 
-    Private KeyboardHintsText As New String("Show / Hide Keyboard Hints > F1" _
+    Private KeyboardHintsText As New String("Hide Keyboard Hints > F1" _
                                   & Environment.NewLine _
-                                  & "Show / Hide Controller Hints > F2" _
+                                  & "Show Controller Hints > F2" _
                                   & Environment.NewLine _
                                   & "Rotate Plane Counterclockwise > A" _
                                   & Environment.NewLine _
@@ -2622,13 +2622,13 @@ Public Class Form1
                                   & Environment.NewLine)
 
 
-    Private ControllerHintsText As New String("Show / Hide Keyboard Hints > F1" _
+    Private ControllerHintsText As New String("Show Keyboard Hints > F1" _
                                   & Environment.NewLine _
                                   & "Rotate Plane Counterclockwise > Left Thumbstick Left" _
                                   & Environment.NewLine _
                                   & "Rotate Plane Clockwise > Left Thumbstick Right" _
                                   & Environment.NewLine _
-                                  & "Show / Hide Controller Hints > F2" _
+                                  & "Hide Controller Hints > F2" _
                                   & Environment.NewLine _
                                   & "Speed Up > A" _
                                   & Environment.NewLine _
