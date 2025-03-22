@@ -2610,21 +2610,13 @@ Public Class Form1
 
     Private KeyboardHintsText As New String("Show / Hide Keyboard Hints > F1" _
                                   & Environment.NewLine _
-                                  & "Rotate Turret CounterClockwise > Left Arrow" _
-                                  & Environment.NewLine _
-                                  & "Rotate Turret Clockwise > Right Arrow" _
-                                  & Environment.NewLine _
                                   & "Show / Hide Controller Hints > F2" _
                                   & Environment.NewLine _
-                                  & "Rotate Hull Counterclockwise > A" _
+                                  & "Rotate Plane Counterclockwise > A" _
                                   & Environment.NewLine _
-                                  & "Rotate Hull Clockwise > D" _
+                                  & "Rotate Plane Clockwise > D" _
                                   & Environment.NewLine _
-                                  & "Forward > W" _
-                                  & Environment.NewLine _
-                                  & "Reverse > S" _
-                                  & Environment.NewLine _
-                                  & "Stop > E" _
+                                  & "Speed Up > W" _
                                   & Environment.NewLine _
                                   & "Fire > Space" _
                                   & Environment.NewLine)
@@ -2632,21 +2624,13 @@ Public Class Form1
 
     Private ControllerHintsText As New String("Show / Hide Keyboard Hints > F1" _
                                   & Environment.NewLine _
-                                  & "Rotate Turret CounterClockwise > Right Thumbstick Left" _
+                                  & "Rotate Plane Counterclockwise > Left Thumbstick Left" _
                                   & Environment.NewLine _
-                                  & "Rotate Turret Clockwise > Right Thumbstick Right" _
-                                  & Environment.NewLine _
-                                  & "Rotate Hull Counterclockwise > Left Thumbstick Left" _
-                                  & Environment.NewLine _
-                                  & "Rotate Hull Clockwise > Left Thumbstick Right" _
+                                  & "Rotate Plane Clockwise > Left Thumbstick Right" _
                                   & Environment.NewLine _
                                   & "Show / Hide Controller Hints > F2" _
                                   & Environment.NewLine _
-                                  & "Forward > A" _
-                                  & Environment.NewLine _
-                                  & "Reverse > Y" _
-                                  & Environment.NewLine _
-                                  & "Stop > B" _
+                                  & "Speed Up > A" _
                                   & Environment.NewLine _
                                   & "Fire > Right Trigger" _
                                   & Environment.NewLine)
